@@ -35,7 +35,7 @@ With the openssl tool, create a private key for the <b>practicioner</b> user, af
  $ openssl req -new -key practicioner.key -out practicioner.csr -subj "/CN=practicioner/O=learner"
 ```
 
- Print the certificate and code it in base64, 
+ Print the certificate and code it in base64.
 ```
  $ cat practicioner.csr | base64 | tr -d '\n'
    LS0tLS1CRUd...IFJFUVVFU1QtLS0tLQo=
@@ -61,13 +61,13 @@ Generate the certificate signing request object.
  $ kubectl create -f kubernetes-files/signing-request-template.yaml 
    certificatesigningrequest.certificates.k8s.io/practicioner-csr created
 ```
-List the certificate signing request objects. It shows a <b>pending</b> condition.
+List the certificate signing request objects. It shows a <b>Pending</b> condition.
 ```
  $ kubectl get csr
  NAME               AGE     SIGNERNAME                     REQUESTOR       CONDITION
  practicioner-csr   7m33s   kubernetes.io/legacy-unknown   minikube-user   Pending
 ```
-Approve the certificate signing request object. After that list the certificate singning request objects again. It shows both approved and issued conditions:
+Approve the certificate signing request object. After that list the certificate singning request objects again. It shows both <b>Approved</b> and <b>Issued</b> conditions:
 ```
  $ kubectl certificate approve practicioner-csr
    certificatesigningrequest.certificates.k8s.io/practicioner-csr approved
