@@ -41,7 +41,7 @@ With the openssl tool, create a private key for the <b>practicioner</b> user, af
    LS0tLS1CRUd...IFJFUVVFU1QtLS0tLQo=
 ```
     
-Assign the value to the <b>request</b> field in the <b>kubernetes-files/signing-request-template.yaml</b> file:
+Assign the value to the <b>request</b> field in the [a link](https://github.com/J35U524/kubernetes-rbac-example/blob/master/kubernetes-files/signing-request-template.yaml) file:
 ```
   apiVersion: certificates.k8s.io/v1beta1
   kind: CertificateSigningRequest
